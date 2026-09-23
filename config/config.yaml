@@ -1,0 +1,14 @@
+# Runtime parameters loaded separately from the static AgentRegistry manifest.
+
+max_retry: 3
+timeout_s: 30
+llm_provider: "azure_openai"
+llm_model: "azure-openai-deployment"
+kb_path: "./kb/"
+stg_mock_mode: false
+
+# This agent is deterministic and has no interrupt/resume workflow.
+memory_enabled: false
+hitl:
+  enabled: false
+  max_hitl: 5

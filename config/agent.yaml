@@ -1,0 +1,22 @@
+# AgentRegistry static manifest. Runtime parameters live in config/config.yaml.
+id: "RET-C2-607"
+name: "Retail CVS Personalized Product Recommendation Agent"
+namespace: "agent1000"
+version: "1.0.2"
+enabled: true
+category: "Cat 2"
+generation_mode: "llm"
+industry: "RET"
+
+base_type: "AgentBaseGraph"
+class: "src.graph.graph.Graph"
+required_trust_level: "VERIFIED_EXTERNAL"
+
+# Azure OpenAI advisory access is invocation-scoped; deterministic ranking
+# remains available if a provider call is unavailable.
+requires:
+  secrets:
+    - "AZURE_OPENAI_API_KEY"
+    - "AZURE_OPENAI_ENDPOINT"
+    - "AZURE_OPENAI_DEPLOYMENT"
+  extras: ["openai"]
